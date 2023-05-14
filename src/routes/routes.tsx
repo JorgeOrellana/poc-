@@ -13,6 +13,7 @@ import { Routes, Route, Outlet } from "react-router-dom";
 import RegisterPage from "../pages/authorization/RegisterPage";
 import ResetPasswordPage from "../pages/authorization/ResetPasswordPage";
 import ProductPage from "../pages/product/ProductPage";
+import ProductCreatePage from "../pages/product/ProductCreatePage";
 
 const HomePage = React.lazy(() => import("../pages/home/HomePage"));
 const TodoPage = React.lazy(() => import("../pages/todo/TodoPage"));
@@ -48,6 +49,14 @@ const AppRoutes = () => {
           element={
             <Suspense fallback={<LoadingPageIndicator />}>
               <ProductPage />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/product/create"
+          element={
+            <Suspense fallback={<LoadingPageIndicator />}>
+              <ProductCreatePage />
             </Suspense>
           }
         />

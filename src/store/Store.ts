@@ -1,10 +1,11 @@
 import { combineReducers } from "@reduxjs/toolkit";
 import TodoReducer from '../slices/TodoSlice';
+import ProductReducer from '../slices/ProductSlice';
 import { configureStore } from "@reduxjs/toolkit";
 import {Logger} from "./middleware/Logger";
 import { TodoApi } from "../api/todos-api";
 
-const rootReducer = combineReducers({todo: TodoReducer, [TodoApi.reducerPath]: TodoApi.reducer} );
+const rootReducer = combineReducers({todo: TodoReducer, product: ProductReducer, [TodoApi.reducerPath]: TodoApi.reducer} );
 
 export const store = configureStore({
   reducer: rootReducer,
